@@ -1,7 +1,7 @@
 {
   "hexonet": {
-    "apilogin": "$HEXONET_API_LOGIN",
-    "apipassword": "$HEXONET_API_SECRET",
+    "apilogin": $HEXONET_API_LOGIN,
+    "apipassword": $HEXONET_API_SECRET,
     "apientity": "LIVE", // for the LIVE system; use "OTE" for the OT&E system
     "debugmode": "0" // set it to "1" to get debug output of the communication with our Backend System API
   }
