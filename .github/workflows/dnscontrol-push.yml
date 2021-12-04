@@ -33,4 +33,5 @@ jobs:
         
         with:
           args: push
+          creds_file: 'creds.json'
 
