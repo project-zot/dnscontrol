@@ -1,0 +1,30 @@
+# Workflow to deploy zot dns zones on a push to main.
+
+name: dnscontrol-push
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push request events but only for the main branch
+  push:
+    branches:
+      - main
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: DNSControl push
+        uses: koenrh/dnscontrol-action@v3
+        env:
+          HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
+          HEXONET_API_SECRET: ${{ secrets.HEXONET_API_PASSWORD }}
+        with:
+          args: push
+
