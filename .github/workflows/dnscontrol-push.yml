@@ -11,7 +11,7 @@ on:
    
 env:
   HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
-  HEXONET_API_SECRET: ${{ secrets.HEXONET_API_PASSWORD }}
+  HEXONET_API_SECRET: ${{ secrets.HEXONET_API_SECRET }}
   
 # Allows you to run this workflow manually from the Actions tab
 #  workflow_dispatch:
@@ -26,12 +26,11 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: what's the login
-        run: echo $HEXONET_API_LOGIN $INPUT_CREDS_FILE
+        run: echo $HEXONET_API_LOGIN
       
       - name: DNSControl push
         uses: koenrh/dnscontrol-action@v3.12.0
         
         with:
           args: push
-          creds_file: 'creds.json'
 
