@@ -13,8 +13,8 @@ env:
   HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
   HEXONET_API_SECRET: ${{ secrets.HEXONET_API_PASSWORD }}
   
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+# Allows you to run this workflow manually from the Actions tab
+workflow_dispatch:
 
 jobs:
   push:
