@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: what's the login
-        run: echo login: $HEXONET_API_LOGIN
+        run: echo $HEXONET_API_LOGIN
       
       - name: DNSControl push
         uses: koenrh/dnscontrol-action@v3
