@@ -1,6 +1,9 @@
 name: dnscontrol_preview
 
-on: pull_request
+# pull_request runs the workflow on the pr's repo.  pull_request_target uses the pr target's workflow
+# Since the later is safer, pull_request_target allows the use of the target's secrets, while 
+# pull_request does not.
+on: pull_request_target
 
 env:
   HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
