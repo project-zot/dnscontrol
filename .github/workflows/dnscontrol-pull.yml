@@ -1,0 +1,29 @@
+name: dnscontrol_preview
+
+on: pull_request
+
+env:
+  HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
+  HEXONET_API_SECRET: ${{ secrets.HEXONET_API_SECRET }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: DNSControl preview
+        uses: koenrh/dnscontrol-action@v3
+        id: dnscontrol_preview
+        with:
+          args: preview
+
+      - name: Preview pull request comment
+        uses: unsplash/comment-on-pr@v1.2.0
+        with:
+          msg: |
+            ```
+            ${{ steps.dnscontrol_preview.outputs.preview_comment }}
+            ```
+          check_for_duplicate_msg: true
