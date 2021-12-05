@@ -14,10 +14,8 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - name: merge commit
+      - name: pr checkout
         uses: actions/checkout@v2
-        with:
-          ref: 'refs/pull/${{ github.event.client_payload.pull_request.number }}/merge'
 
       - name: DNSControl preview
         uses: koenrh/dnscontrol-action@v3.12.0
