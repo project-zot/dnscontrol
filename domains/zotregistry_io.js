@@ -6,7 +6,7 @@ D("zotregistry.io", REG_HEX,
 //
 // PR test
 // 
- TXT('@', 'zot is cool'),
+ TXT('@', 'zot is really cool'),
 //
 // Naked A and AAAA records
 //
