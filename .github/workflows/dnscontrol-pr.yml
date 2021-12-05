@@ -3,7 +3,7 @@ name: dnscontrol_preview
 # pull_request runs the workflow on the pr's repo.  pull_request_target uses the pr target's workflow
 # Since the later is safer, pull_request_target allows the use of the target's secrets, while 
 # pull_request does not.
-on: pull_request_target
+on: pull_request
 
 env:
   HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
@@ -14,7 +14,10 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: merge commit
+        uses: actions/checkout@v2
+        with:
+          ref: 'refs/pull/${{ github.event.client_payload.pull_request.number }}/merge'
 
       - name: DNSControl preview
         uses: koenrh/dnscontrol-action@v3.12.0
