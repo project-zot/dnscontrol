@@ -17,6 +17,10 @@ env:
 jobs:
   push:
     runs-on: ubuntu-latest
+# branches are defined so the check is done on any branch other than main
+# No change should be committed to main, so check should be done outside
+# of main.  The PR to main will run preview, which will also blow up with
+# any syntax error.
     branches: 
       - '**'
       - '!main'
