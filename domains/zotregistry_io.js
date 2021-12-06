@@ -2,7 +2,7 @@ D("zotregistry.io", REG_HEX,
 //
 // website
 //
-  CNAME('www', 'project-zot.github.com.'),
+  CNAME('www', 'project-zot.github.io.'),
 //
 // PR test
 // 
