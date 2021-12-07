@@ -40,4 +40,5 @@ DEFAULTS(
 // Domains
 
 require("domains/zotregistry_io.js");
+require("domains/zotregistry_net.js");
 
