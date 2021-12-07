@@ -29,6 +29,6 @@ Please consult the [dnscontrol](https://stackexchange.github.io/dnscontrol/) doc
 If a domain needs to be added or removed, edits need to be made to the [dnsconfig.js](https://github.com/project-zot/dnscontrol/dnsconfig.js) file.  This file is also where you define reuseable macros for things like namesever selection, SOA data, *etc.*
 
 If you need to make changes to a given zone, the zone's file needs to be edited, currently those zone files are:
-* [zotregistry_io.js](`https://github.com/project-zot/dnscontrol/domains/zotregistry_io.js)
-* [zotregistry_net.js](`https://github.com/project-zot/dnscontrol/domains/zotregistry_net.js)
+* [zotregistry_io.js](https://github.com/project-zot/dnscontrol/domains/zotregistry_io.js)
+* [zotregistry_net.js](https://github.com/project-zot/dnscontrol/domains/zotregistry_net.js)
 
