@@ -6,6 +6,13 @@ name: dnscontrol-check
 on:
   # Triggers the workflow on push request events but only for the main branch
   push:
+  # branches are defined so the check is done on any branch other than main
+  # No change should be committed to main, so check should be done outside
+  # of main.  The PR to main will run preview, which will also blow up with
+  # any syntax error.
+    branches:
+      - '**'
+      - '!main'
    
 env:
   HEXONET_API_LOGIN: ${{ secrets.HEXONET_API_LOGIN }}
@@ -17,13 +24,6 @@ env:
 jobs:
   push:
     runs-on: ubuntu-latest
-# branches are defined so the check is done on any branch other than main
-# No change should be committed to main, so check should be done outside
-# of main.  The PR to main will run preview, which will also blow up with
-# any syntax error.
-    branches: 
-      - '**'
-      - '!main'
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
