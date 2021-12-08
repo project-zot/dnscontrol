@@ -2,5 +2,5 @@ D("zotregistry.net", REG_HEX,
 //
 // nothing here yet
 //
-  TXT('@', 'zot as a service?')
+  TXT('@', 'zot as a service, really?')
 )
