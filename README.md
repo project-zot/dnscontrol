@@ -14,9 +14,9 @@ We are using [hexonet](https://www.hexonet.net) as both the registrar and the au
 
 We are using stackexchange's [dnscontrol](https://stackexchange.github.io/dnscontrol/) dns management system, using a set of *GitHub Actions*.  The actions we are incorporating are [dnscontrol-action](https://github.com/koenrh/dnscontrol-action).  There are three actions that have been defined.
 
-* [dnscontrol-check](https://github.com/project-zot/dnscontrol/.github/workflows/dnscontrol-check.yml) is run by a push to any branch other than the *main* branch.  This runs locally (no hexonet access) just to check for syntax errors.
-* [dnscontrol-pr](https://github.com/project-zot/dnscontrol/.github/workflows/dnscontrol-pr.yml) is run when a pull request is made from another branch to main.  It generates a pr comment that contains a *dry run* output of dnscontrol's interaction with hexonet.
-* [dnscontrol-push](https://github.com/project-zot/dnscontrol/.github/workflows/dnscontrol-push.yml) is run when there is a merge into *main* branch.  It actually commits the changes to hexonet.
+* [dnscontrol-check](https://github.com/project-zot/dnscontrol/blob/.github/workflows/dnscontrol-check.yml) is run by a push to any branch other than the *main* branch.  This runs locally (no hexonet access) just to check for syntax errors.
+* [dnscontrol-pr](https://github.com/project-zot/dnscontrol/blob/.github/workflows/dnscontrol-pr.yml) is run when a pull request is made from another branch to main.  It generates a pr comment that contains a *dry run* output of dnscontrol's interaction with hexonet.
+* [dnscontrol-push](https://github.com/project-zot/dnscontrol/blob/.github/workflows/dnscontrol-push.yml) is run when there is a merge into *main* branch.  It actually commits the changes to hexonet.
 
 Secrets are stored in this repo that authenticate to hexonet for API access.
 
@@ -26,9 +26,9 @@ Since github actions can not access secrets when they are called from a fork, al
 
 Please consult the [dnscontrol](https://stackexchange.github.io/dnscontrol/) documentation for an overview of dnscontrol's syntax.  It is worth noting that dnscontrol configurations are written in javascript.
 
-If a domain needs to be added or removed, edits need to be made to the [dnsconfig.js](https://github.com/project-zot/dnscontrol/dnsconfig.js) file.  This file is also where you define reuseable macros for things like namesever selection, SOA data, *etc.*
+If a domain needs to be added or removed, edits need to be made to the [dnsconfig.js](https://github.com/project-zot/dnscontrol/blob/dnsconfig.js) file.  This file is also where you define reuseable macros for things like namesever selection, SOA data, *etc.*
 
 If you need to make changes to a given zone, the zone's file needs to be edited, currently those zone files are:
-* [zotregistry_io.js](https://github.com/project-zot/dnscontrol/domains/zotregistry_io.js)
-* [zotregistry_net.js](https://github.com/project-zot/dnscontrol/domains/zotregistry_net.js)
+* [zotregistry_io.js](https://github.com/project-zot/dnscontrol/blob/domains/zotregistry_io.js)
+* [zotregistry_net.js](https://github.com/project-zot/dnscontrol/blob/domains/zotregistry_net.js)
 
