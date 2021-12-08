@@ -22,13 +22,13 @@ env:
 #  workflow_dispatch:
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: DNSControl push
+      - name: DNSControl check
         uses: koenrh/dnscontrol-action@v3.12.0  
         with:
           args: check
