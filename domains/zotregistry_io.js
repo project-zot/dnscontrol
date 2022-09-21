@@ -17,5 +17,5 @@ D("zotregistry.io", REG_HEX,
   AAAA('@', '2606:50c0:8000::153'),
   AAAA('@', '2606:50c0:8001::153'),
   AAAA('@', '2606:50c0:8002::153'),
-  AAAA('@', '2606:50c0:8003::153')
-)
+  AAAA('@', '2606:50c0:8003::153'),
+  TXT('_github-pages-challenge-project-zot.docs', 'acee8e1be67bd9361fb30314926ee7'))
